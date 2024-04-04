@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:56:14 by gde-sa            #+#    #+#             */
-/*   Updated: 2024/01/11 19:02:56 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:13:19 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@
 # endif
 
 /* libft */
-typedef struct s_list
+/*typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}	t_list;
+}	t_list;*/
 
 void			ft_putchar(char c);
 void			*ft_memset(void *b, int c, size_t len);
@@ -70,7 +70,7 @@ void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 char			*ft_itoa(int n);
-t_list			*ft_lstnew(void *content);
+/*t_list			*ft_lstnew(void *content);
 void			ft_lstadd_front(t_list **lst, t_list *new);
 int				ft_lstsize(t_list *lst);
 t_list			*ft_lstlast(t_list *lst);
@@ -79,8 +79,7 @@ void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), \
-							void (*del)(void *));
-
+							void (*del)(void *));*/
 int				ft_printf(const char *format, ...);
 void			ft_convert_hexa(unsigned int n, char format, int *count);
 void			ft_after_percentage(va_list args, char format, int *count);

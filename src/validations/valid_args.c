@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_valid_args.c                                    :+:      :+:    :+:   */
+/*   valid_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 15:04:42 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/02 11:21:29 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/04/03 12:05:42 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_check_args(int argc)
+void	ft_valid_args(int argc)
 {
 	if (argc < 2)
 		exit(EXIT_FAILURE);

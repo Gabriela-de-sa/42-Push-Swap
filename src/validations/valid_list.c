@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_valid_list.c                                    :+:      :+:    :+:   */
+/*   valid_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 15:08:06 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/02 12:50:24 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/04/04 12:44:54 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-#include "../../libft/libft.h"
 
 int	ft_check_duplicates(char *n, char **str, int index)
 {
@@ -71,7 +70,7 @@ int	ft_is_numeric(char *str)
 	return (0);
 }
 
-void	ft_check_list(char **str)
+void	ft_valid_list(char **str)
 {
 	int	i;
 

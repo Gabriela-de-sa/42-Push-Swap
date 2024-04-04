@@ -6,7 +6,7 @@
 #    By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 15:57:53 by gabriela          #+#    #+#              #
-#    Updated: 2024/04/02 12:50:54 by gabriela         ###   ########.fr        #
+#    Updated: 2024/04/03 12:30:59 by gabriela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,9 +29,10 @@ SRC = src/
 
 FILE = \
 	push_swap.c\
-	validations/ft_valid_args.c\
-	validations/ft_valid_list.c\
+	validations/valid_args.c\
+	validations/valid_list.c\
 	utils/ft_strcmp.c\
+	list/create_list.c\
 
 SRC_FILES = $(addprefix $(SRC),$(FILE))
 	
