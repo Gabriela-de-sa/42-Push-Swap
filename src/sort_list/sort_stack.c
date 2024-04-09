@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 17:01:55 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/09 15:20:02 by gabriela         ###   ########.fr       */
+/*   Created: 2024/04/06 15:50:38 by gabriela          #+#    #+#             */
+/*   Updated: 2024/04/09 12:57:14 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
-#include <stdio.h>
+#include "../include/push_swap.h"
 
-int	main(int argc, char **argv)
+/*void	ft_order_decision(t_data **data, t_list **stack_a)
 {
-	t_data	*data;
-	t_list	*stack_a;
-	//t_list	*lst;
+	t_list	*stack_b;
 
-	stack_a = NULL;
-	ft_valid_args(argc);
-	ft_valid_list(argv);
-	data = ft_calloc(1, sizeof(t_data));
-	ft_create_stack_a(argv, &data, &stack_a);
-	//ft_order_decision(&data, &stack_a);
-	ft_clear_stack_a(&stack_a, &data);
-}
+	stack_b = NULL;
+	if ((*data)->length <= 5)
+		ft_sort_small_stack(data, stack_a, stack_b);
+}*/
+
+/*
+a stack_b vai ser criada antes das funcoes de sort
+	** verificar se da erro;
+	** se alguma funcao que usa a stack_b dar erro, verificar se ela está 
+	
+*/

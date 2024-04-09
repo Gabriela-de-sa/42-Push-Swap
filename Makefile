@@ -6,7 +6,7 @@
 #    By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 15:57:53 by gabriela          #+#    #+#              #
-#    Updated: 2024/04/03 12:30:59 by gabriela         ###   ########.fr        #
+#    Updated: 2024/04/09 15:18:46 by gabriela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,10 +29,15 @@ SRC = src/
 
 FILE = \
 	push_swap.c\
+	clear_memory.c\
 	validations/valid_args.c\
 	validations/valid_list.c\
+	stack/create_stack.c\
 	utils/ft_strcmp.c\
-	list/create_list.c\
+	utils/swap.c\
+	utils/rotate.c\
+	utils/rotate_reverse.c\
+	utils/push.c\
 
 SRC_FILES = $(addprefix $(SRC),$(FILE))
 	

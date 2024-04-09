@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_list.c                                      :+:      :+:    :+:   */
+/*   create_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 12:27:25 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/04 14:38:11 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/04/09 12:47:14 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-#include <stdio.h>
 
-void	ft_create_node(t_list **head, int number)
+void	ft_create_node(t_list **list, t_data **data, int number)
 {
 	t_list	*node;
 	t_list	*lst;
 
-	lst = *head;
+	lst = *list;
 	node = (t_list *)malloc(sizeof(t_list));
+	if (node == NULL)
+		ft_clear_stack_a(list, data);
 	node->data = number;
 	node->next = NULL;
-	if (*head == NULL)
+	if (*list == NULL)
 	{
 		node->previous = NULL;
-		*head = node;
+		*list = node;
 		return ;
 	}
 	while (lst->next != NULL)
@@ -34,20 +35,22 @@ void	ft_create_node(t_list **head, int number)
 	node->previous = lst;
 }
 
-void	ft_create_list(char **str, t_data **data)
+void	ft_create_stack_a(char **str, t_data **data, t_list **stack_a)
 {
 	int			i;
-	t_list		*head;
 	int			number;
-	t_list		*lst;
 
 	i = 1;
-	head = NULL; 
 	while (str[i])
 	{
 		(*data)->length++;
 		number = ft_atoi(str[i]);
-		ft_create_node(&head, number);
+		ft_create_node(stack_a, data, number);
 		i++;
 	}
 }
+
+/*void	ft_create_stack_b(t_list **stack_b, int number)
+{
+	
+}*/

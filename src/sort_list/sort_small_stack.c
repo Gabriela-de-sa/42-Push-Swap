@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort_small_stack.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 17:01:55 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/09 15:20:02 by gabriela         ###   ########.fr       */
+/*   Created: 2024/04/06 19:55:53 by gabriela          #+#    #+#             */
+/*   Updated: 2024/04/08 12:06:14 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
-#include <stdio.h>
+#include "../include/push_swap.h"
 
-int	main(int argc, char **argv)
+/*t_list	ft_sort_small_stack(t_data **data, t_list **stack_a)
 {
-	t_data	*data;
-	t_list	*stack_a;
-	//t_list	*lst;
-
-	stack_a = NULL;
-	ft_valid_args(argc);
-	ft_valid_list(argv);
-	data = ft_calloc(1, sizeof(t_data));
-	ft_create_stack_a(argv, &data, &stack_a);
-	//ft_order_decision(&data, &stack_a);
-	ft_clear_stack_a(&stack_a, &data);
-}
+	
+}*/
