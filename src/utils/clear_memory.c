@@ -6,11 +6,11 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 17:09:34 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/09 15:21:49 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/04/11 18:16:30 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
+#include "../include/push_swap.h"
 
 void	ft_clear_stack_a(t_list **list, t_data **data)
 {
@@ -30,7 +30,7 @@ void	ft_clear_stack_a(t_list **list, t_data **data)
 	exit(EXIT_FAILURE);
 }
 
-void	ft_clear_stacks(t_list **stack_a, t_list **stack_b, t_data **data)
+int	ft_clear_stacks(t_list **stack_a, t_list **stack_b, t_data **data)
 {
 	t_list	*lst;
 	t_list	*next;
@@ -54,6 +54,7 @@ void	ft_clear_stacks(t_list **stack_a, t_list **stack_b, t_data **data)
 	free(*data);
 	free(*stack_a);
 	free(*stack_b);
+	return (0);
 }
 
 int	ft_clear(int option, t_list **stack_a, t_list **stack_b, t_data **data)

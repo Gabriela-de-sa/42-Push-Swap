@@ -6,7 +6,7 @@
 #    By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 15:57:53 by gabriela          #+#    #+#              #
-#    Updated: 2024/04/09 15:18:46 by gabriela         ###   ########.fr        #
+#    Updated: 2024/04/11 17:30:07 by gabriela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,15 +29,17 @@ SRC = src/
 
 FILE = \
 	push_swap.c\
-	clear_memory.c\
 	validations/valid_args.c\
 	validations/valid_list.c\
 	stack/create_stack.c\
+	utils/clear_memory.c\
 	utils/ft_strcmp.c\
-	utils/swap.c\
-	utils/rotate.c\
-	utils/rotate_reverse.c\
-	utils/push.c\
+	operations/swap.c\
+	operations/rotate.c\
+	operations/rotate_reverse.c\
+	operations/push.c\
+	sort_list/is_sorted.c\
+	sort_list/sort_stack.c\
 
 SRC_FILES = $(addprefix $(SRC),$(FILE))
 	
@@ -50,10 +52,14 @@ OBJS = $(SRC_FILES:.c=.o)
 all: libft/libft.a $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(HEADERS) $(LIBS) -o $(NAME)
+	echo "Compiling push_swap"
+	@$(CC) $(CFLAGS) $(OBJS) $(HEADERS) $(LIBS) -o $(NAME)
+	echo "push_swap has been compiled..."
 
 libft/libft.a:
+	echo "Compling libft..."
 	@make -sC ./libft
+	echo "Libft has been compiled..."
 
 clean:
 	@rm -rf $(OBJS)

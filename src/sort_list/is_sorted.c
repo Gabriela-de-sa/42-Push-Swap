@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_stack.c                                       :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/06 15:50:38 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/11 18:15:41 by gabriela         ###   ########.fr       */
+/*   Created: 2024/04/11 11:41:14 by gabriela          #+#    #+#             */
+/*   Updated: 2024/04/11 12:51:44 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_order_decision(t_data **data, t_list **stack_a)
+int	ft_is_sorted(t_list **list)
 {
-	if ((*data)->length == 1)
-		ft_clear_stack_a(stack_a, data);
-	if (ft_is_sorted(stack_a) == 0)
-		ft_clear_stack_a(stack_a, data);
-	/*if ((*data)->length <= 5)
-		ft_sort_small_stack(data, stack_a);*/
+	t_list	*lst;
+
+	lst = *list;
+	while (lst != NULL)
+	{
+		if (lst->next != NULL)
+		{
+			if (lst->data > lst->next->data)
+				return (1);
+		}
+		lst = lst->next;
+	}
+	return (0);
 }

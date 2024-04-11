@@ -6,58 +6,51 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 11:31:09 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/08 13:28:31 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/04/11 19:48:46 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-t_list	*ft_ra(t_list **stack_a, t_data **data)
+void	ft_ra(t_list **stack_a, t_data **data, int p)
 {
-	int		swap;
+	t_list	*first;
 	t_list	*lst;
 
 	if ((*data)->length <= 1)
-		return (*stack_a);
+		return ;
 	lst = *stack_a;
-	swap = (*stack_a)->data;
-	while (lst)
-	{
-		if (lst->previous != NULL)
-			lst->previous->data = lst->data;
-		if (lst->next != NULL)
-			lst->data = lst->next->data;
-		if (lst->next == NULL)
-			lst->data = swap;
+	first = lst;
+	*stack_a = lst->next;
+	while (lst->next != NULL)
 		lst = lst->next;
-	}
-	return (*stack_a);
+	lst->next = first;
+	first->next = NULL;
+	if (p == 0)
+		write(1, "ra\n", 3);
 }
 
-t_list	*ft_rb(t_list **stack_b, t_data **data)
+void	ft_rb(t_list **stack_b, t_data **data, int p)
 {
-	int		swap;
+	t_list	*first;
 	t_list	*lst;
 
 	if (!(*stack_b) || (*data)->length <= 1)
-		return (*stack_b);
+		return ;
 	lst = *stack_b;
-	swap = (*stack_b)->data;
-	while (lst)
-	{
-		if (lst->previous != NULL)
-			lst->previous->data = lst->data;
-		if (lst->next != NULL)
-			lst->data = lst->next->data;
-		if (lst->next == NULL)
-			lst->data = swap;
+	first = lst;
+	*stack_b = lst->next;
+	while (lst->next != NULL)
 		lst = lst->next;
-	}
-	return (*stack_b);
+	lst->next = first;
+	first->next = NULL;
+	if (p == 0)
+		write(1, "rb\n", 3);
 }
 
 void	ft_rr(t_list **stack_a, t_list **stack_b, t_data **data)
 {
-	ft_ra(stack_a, data);
-	ft_rb(stack_b, data);
+	ft_ra(stack_a, data, 1);
+	ft_rb(stack_b, data, 1);
+	write(1, "rr\n", 3);
 }
