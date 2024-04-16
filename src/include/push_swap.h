@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 14:52:17 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/11 19:49:50 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/04/14 17:07:18 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
 
 typedef struct s_data
 {
-	int	length;
-	int	print;
+	int		length;
 }	t_data;
 
 typedef struct s_list
@@ -31,19 +30,22 @@ typedef struct s_list
 }	t_list;
 
 //clear memory alocate
-void			ft_clear_stack_a(t_list **list, t_data **data);
+int				ft_clear_stack_a(t_list **list, t_data **data);
 int				ft_clear_stacks(t_list **stack_a, t_list **stack_b, \
 								t_data **data);
-int				ft_clear(int option, t_list **stack_a, t_list **stack_b, \
-					t_data **data);
 //valid args
 void			ft_valid_args(int argc);
 int				ft_is_numeric(char *c);
-void			ft_valid_list(char **str);
+void			ft_validation(char **str, int argc);
 //auxiliary functions 
 int				ft_strcmp(const char *s1, const char *s2);
+int				ft_min(t_list **list);
+int				ft_max(t_list **list);
 //create stacks
 void			ft_create_stack_a(char **str, t_data **data, t_list **head);
+void			ft_create_node_last(t_list **list, t_data **data, int number);
+void			ft_create_top_node(t_list **list, t_list **stack, \
+					t_data **data, int value);
 //sorting functions
 void			ft_order_decision(t_data **data, t_list **head);
 int				ft_is_sorted(t_list **list);

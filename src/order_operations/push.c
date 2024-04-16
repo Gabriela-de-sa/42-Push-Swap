@@ -6,13 +6,14 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 13:00:30 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/11 18:13:59 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/04/12 15:43:38 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_create_top_node(t_list **list, t_data **data, int value)
+void	ft_create_top_node(t_list **list, t_list **stack, t_data **data, \
+							int value)
 {
 	t_list	*node;
 	t_list	*lst;
@@ -20,7 +21,7 @@ void	ft_create_top_node(t_list **list, t_data **data, int value)
 	lst = *list;
 	node = (t_list *)malloc(sizeof(t_list));
 	if (node == NULL)
-		exit(ft_clear(2, list, NULL, data));
+		exit(ft_clear_stacks(list, stack, data));
 	node->data = value;
 	node->next = NULL;
 	*list = node;
@@ -37,7 +38,7 @@ void	ft_pa(t_list **stack_a, t_list **stack_b, t_data **data)
 	lst_b = *stack_b;
 	value = lst_b->data;
 	*stack_b = lst_b->next;
-	ft_create_top_node(stack_a, data, value);
+	ft_create_top_node(stack_a, stack_b, data, value);
 	write(1, "pa\n", 3);
 }
 
@@ -51,6 +52,6 @@ void	ft_pb(t_list **stack_a, t_list **stack_b, t_data **data)
 	lst_a = *stack_a;
 	value = lst_a->data;
 	*stack_a = lst_a->next;
-	ft_create_top_node(stack_b, data, value);
+	ft_create_top_node(stack_b, stack_a, data, value);
 	write(1, "pb\n", 3);
 }

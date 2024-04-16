@@ -6,13 +6,13 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 12:27:25 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/09 12:47:14 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/04/12 13:42:00 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_create_node(t_list **list, t_data **data, int number)
+void	ft_create_node_last(t_list **list, t_data **data, int number)
 {
 	t_list	*node;
 	t_list	*lst;
@@ -20,7 +20,7 @@ void	ft_create_node(t_list **list, t_data **data, int number)
 	lst = *list;
 	node = (t_list *)malloc(sizeof(t_list));
 	if (node == NULL)
-		ft_clear_stack_a(list, data);
+		exit(ft_clear_stack_a(list, data));
 	node->data = number;
 	node->next = NULL;
 	if (*list == NULL)
@@ -45,7 +45,7 @@ void	ft_create_stack_a(char **str, t_data **data, t_list **stack_a)
 	{
 		(*data)->length++;
 		number = ft_atoi(str[i]);
-		ft_create_node(stack_a, data, number);
+		ft_create_node_last(stack_a, data, number);
 		i++;
 	}
 }

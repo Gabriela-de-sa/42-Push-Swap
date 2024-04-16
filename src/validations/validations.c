@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   valid_list.c                                       :+:      :+:    :+:   */
+/*   validations.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 15:08:06 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/04 12:44:54 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/04/14 17:09:18 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,12 @@ int	ft_is_numeric(char *str)
 	return (0);
 }
 
-void	ft_valid_list(char **str)
+void	ft_validation(char **str, int argc)
 {
 	int	i;
 
+	if (argc < 2)
+		exit(EXIT_FAILURE);
 	i = 1;
 	while (str[i])
 	{
