@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 14:52:17 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/14 17:07:18 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:01:28 by gde-sa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void			ft_validation(char **str, int argc);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_min(t_list **list);
 int				ft_max(t_list **list);
+int				ft_find_index(t_list **list, int number);
 //create stacks
 void			ft_create_stack_a(char **str, t_data **data, t_list **head);
 void			ft_create_node_last(t_list **list, t_data **data, int number);
@@ -49,7 +50,11 @@ void			ft_create_top_node(t_list **list, t_list **stack, \
 //sorting functions
 void			ft_order_decision(t_data **data, t_list **head);
 int				ft_is_sorted(t_list **list);
-void			ft_sort_small_stack(t_data **data, t_list **stack_a);
+void			ft_sort_small_stack(t_data **data, t_list **stack_a, \
+					t_list **stack_b);
+void			ft_order_three(t_list **stack_a, t_data **data);
+void			ft_order_four_or_five(t_list **stack_a, t_list **stack_b, \
+					t_data **data);
 //auxiliary functions for sorting
 void			ft_sa(t_list **stack_a, t_data **data, int p);
 void			ft_sb(t_list **stack_b, t_data **data, int p);

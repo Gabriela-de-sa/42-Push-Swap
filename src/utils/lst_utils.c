@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   lst_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 20:12:07 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/13 15:39:01 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:10:00 by gde-sa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-// retorna o menor numero da lista
 int	ft_min(t_list **list)
 {
 	t_list	*lst;
@@ -29,7 +28,6 @@ int	ft_min(t_list **list)
 	return (min);
 }
 
-// retorna o maior numero da lista
 int	ft_max(t_list **list)
 {
 	t_list	*lst;
@@ -46,4 +44,19 @@ int	ft_max(t_list **list)
 	return (max);
 }
 
+int	ft_find_index(t_list **list, int number)
+{
+	t_list	*lst;
+	int		index;
 
+	lst = *list;
+	index = 0;
+	while (lst->next != NULL)
+	{
+		if (lst->data == number)
+			return (index);
+		index++;
+		lst = lst->next;
+	}
+	return (index);
+}

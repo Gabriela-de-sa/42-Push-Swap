@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+         #
+#    By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 15:57:53 by gabriela          #+#    #+#              #
-#    Updated: 2024/04/14 17:08:41 by gabriela         ###   ########.fr        #
+#    Updated: 2024/04/16 13:36:05 by gde-sa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,8 @@ FILE = \
 	order_operations/push.c\
 	sort_list/is_sorted.c\
 	sort_list/sort_stack.c\
-	sort_list/sort_small_stack.c\
+	sort_list/order_three.c\
+	sort_list/order_five.c\
 
 SRC_FILES = $(addprefix $(SRC),$(FILE))
 	
