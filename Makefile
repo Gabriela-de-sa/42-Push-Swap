@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+         #
+#    By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 15:57:53 by gabriela          #+#    #+#              #
-#    Updated: 2024/04/16 13:36:05 by gde-sa           ###   ########.fr        #
+#    Updated: 2024/04/17 16:53:22 by gabriela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ FILE = \
 	validations/validations.c\
 	stack/create_stack.c\
 	utils/clear_memory.c\
+	utils/lst_utils.c\
 	utils/ft_strcmp.c\
 	order_operations/swap.c\
 	order_operations/rotate.c\
@@ -40,7 +41,6 @@ FILE = \
 	sort_list/is_sorted.c\
 	sort_list/sort_stack.c\
 	sort_list/order_three.c\
-	sort_list/order_five.c\
 
 SRC_FILES = $(addprefix $(SRC),$(FILE))
 	

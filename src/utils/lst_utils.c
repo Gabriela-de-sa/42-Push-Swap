@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 20:12:07 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/16 12:10:00 by gde-sa           ###   ########.fr       */
+/*   Updated: 2024/04/17 16:30:25 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_min(t_list **list)
 
 	lst = *list;
 	min = lst->data;
-	while (lst->next != NULL)
+	while (lst != NULL)
 	{
 		if (lst->data < min)
 			min = lst->data;
@@ -35,7 +35,7 @@ int	ft_max(t_list **list)
 
 	lst = *list;
 	max = lst->data;
-	while (lst->next != NULL)
+	while (lst != NULL)
 	{
 		if (lst->data > max)
 			max = lst->data;
@@ -51,7 +51,7 @@ int	ft_find_index(t_list **list, int number)
 
 	lst = *list;
 	index = 0;
-	while (lst->next != NULL)
+	while (lst != NULL)
 	{
 		if (lst->data == number)
 			return (index);
@@ -59,4 +59,19 @@ int	ft_find_index(t_list **list, int number)
 		lst = lst->next;
 	}
 	return (index);
+}
+
+int	ft_len_list(t_list **list)
+{
+	t_list	*lst;
+	int		len;
+
+	len = 0;
+	lst = (*list);
+	while (lst != NULL)
+	{
+		len++;
+		lst = lst->next;
+	}
+	return (len);
 }
