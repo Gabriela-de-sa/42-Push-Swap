@@ -6,7 +6,7 @@
 #    By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 15:57:53 by gabriela          #+#    #+#              #
-#    Updated: 2024/04/17 16:53:22 by gabriela         ###   ########.fr        #
+#    Updated: 2024/04/23 17:55:08 by gabriela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ FILE = \
 	sort_list/is_sorted.c\
 	sort_list/sort_stack.c\
 	sort_list/order_three.c\
+	sort_list/big_sort.c\
 
 SRC_FILES = $(addprefix $(SRC),$(FILE))
 	

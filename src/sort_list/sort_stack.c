@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 15:50:38 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/17 16:57:06 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/04/23 12:14:57 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,6 @@ void	ft_order_decision(t_list **stack_a)
 		exit(ft_clear_stack_a(stack_a));
 	else if (len <= 3)
 		ft_sort_small_stack(stack_a, len);
+	else
+		ft_big_sort(stack_a);
 }

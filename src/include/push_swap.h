@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 14:52:17 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/17 16:54:02 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/04/23 18:21:31 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void			ft_order_decision(t_list **stack_a);
 int				ft_is_sorted(t_list **list);
 void			ft_sort_small_stack(t_list **stack_a, int len);
 void			ft_order_three(t_list **stack_a);
+void			ft_big_sort(t_list **stack_a);
+t_list			*push_stack_b(t_list **stack_a);
 //auxiliary functions for sorting
 void			ft_sa(t_list **stack_a, int p);
 void			ft_sb(t_list **stack_b, int p);
