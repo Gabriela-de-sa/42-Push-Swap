@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 20:12:07 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/17 16:30:25 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/04/25 16:41:24 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,16 @@ int	ft_len_list(t_list **list)
 		lst = lst->next;
 	}
 	return (len);
+}
+
+int	ft_last_lst(t_list **stack)
+{
+	t_list	*lst;
+	int		value;
+
+	lst = *stack;
+	while (lst != NULL)
+		lst = lst->next;
+	value = lst->data;
+	return (value);
 }

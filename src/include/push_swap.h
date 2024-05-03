@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 14:52:17 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/23 18:21:31 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/05/03 19:05:31 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,18 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdbool.h>
 # include "../../libft/libft.h"
 
 typedef struct s_list
 {
 	int				data;
 	struct s_list	*next;
+	int				index;
+	int				push_cost;
+	bool			above_median;
+	struct s_list	*target_node;
+	bool			cheapest_node;
 }	t_list;
 
 //clear memory alocate
@@ -36,6 +42,9 @@ int				ft_min(t_list **list);
 int				ft_max(t_list **list);
 int				ft_find_index(t_list **list, int number);
 int				ft_len_list(t_list **list);
+int				ft_last_lst(t_list **stack);
+t_list			*ft_node_max(t_list **list);
+t_list			*ft_node_min(t_list **list);
 //create stacks
 void			ft_create_stack_a(char **str, t_list **head);
 void			ft_create_node_last(t_list **list, int number);
@@ -43,10 +52,9 @@ void			ft_create_top_node(t_list **list, t_list **stack, int value);
 //sorting functions
 void			ft_order_decision(t_list **stack_a);
 int				ft_is_sorted(t_list **list);
-void			ft_sort_small_stack(t_list **stack_a, int len);
 void			ft_order_three(t_list **stack_a);
-void			ft_big_sort(t_list **stack_a);
-t_list			*push_stack_b(t_list **stack_a);
+void			ft_big_sort(t_list **stack_a, int len_a);
+void			ft_init_node_a(t_list **stack_a, t_list **stack_b);
 //auxiliary functions for sorting
 void			ft_sa(t_list **stack_a, int p);
 void			ft_sb(t_list **stack_b, int p);

@@ -6,7 +6,7 @@
 #    By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 15:57:53 by gabriela          #+#    #+#              #
-#    Updated: 2024/04/23 17:55:08 by gabriela         ###   ########.fr        #
+#    Updated: 2024/05/01 17:29:12 by gabriela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ FILE = \
 	stack/create_stack.c\
 	utils/clear_memory.c\
 	utils/lst_utils.c\
+	utils/lst_utils2.c\
 	utils/ft_strcmp.c\
 	order_operations/swap.c\
 	order_operations/rotate.c\
@@ -42,6 +43,7 @@ FILE = \
 	sort_list/sort_stack.c\
 	sort_list/order_three.c\
 	sort_list/big_sort.c\
+	sort_list/init_node_a.c\
 
 SRC_FILES = $(addprefix $(SRC),$(FILE))
 	

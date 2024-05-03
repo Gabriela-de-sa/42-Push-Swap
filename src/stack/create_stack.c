@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 12:27:25 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/17 16:45:46 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:40:14 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,3 @@ void	ft_create_stack_a(char **str, t_list **stack_a)
 		i++;
 	}
 }
-
-/*void	ft_create_stack_b(t_list **stack_b, int number)
-{
-	
-}*/

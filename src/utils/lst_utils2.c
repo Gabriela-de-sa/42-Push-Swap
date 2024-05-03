@@ -1,56 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clear_memory.c                                     :+:      :+:    :+:   */
+/*   lst_utils2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 17:09:34 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/29 11:54:12 by gabriela         ###   ########.fr       */
+/*   Created: 2024/05/01 14:52:40 by gabriela          #+#    #+#             */
+/*   Updated: 2024/05/01 19:30:39 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ft_clear_stack_a(t_list **list)
+t_list	*ft_node_max(t_list **list)
 {
-	t_list	*lst;
-	t_list	*next;
+	t_list		*lst;
+	t_list		*max_node;
+	int			max;
 
+	if (!list || !(*list))
+		return NULL;
 	lst = *list;
+	max = lst->data;
 	while (lst != NULL)
 	{
-		next = lst->next;
-		free(lst);
-		lst = next;
+		if (lst->data > max)
+		{
+			max = lst->data;
+			max_node = lst;
+		}
+		lst = lst->next;
 	}
-	*list = NULL;
-	free(*list);
-	return (0);
+	return (max_node);
 }
 
-int	ft_clear_stacks(t_list **stack_a, t_list **stack_b)
+t_list	*ft_node_min(t_list **list)
 {
-	t_list	*lst;
-	t_list	*next;
+	t_list		*lst;
+	t_list		*min_node;
+	int			min;
 
-	lst = *stack_a;
+	if (!list || !(*list))
+		return NULL;
+	lst = *list;
+	min = lst->data;
 	while (lst != NULL)
 	{
-		next = lst->next;
-		free(lst);
-		lst = next;
+		if (lst->data < min)
+		{
+			min = lst->data;
+			min_node = lst;
+		}
+		lst = lst->next;
 	}
-	lst = *stack_b;
-	while (lst != NULL)
-	{
-		next = lst->next;
-		free(lst);
-		lst = next;
-	}
-	*stack_a = NULL;
-	*stack_b = NULL;
-	free(*stack_a);
-	free(*stack_b);
-	return (0);
+	return (min_node);
 }
