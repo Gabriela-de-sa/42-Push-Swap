@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:52:40 by gabriela          #+#    #+#             */
-/*   Updated: 2024/05/01 19:30:39 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/05/05 14:56:10 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,20 @@ t_list	*ft_node_min(t_list **list)
 		lst = lst->next;
 	}
 	return (min_node);
+}
+
+t_list	*ft_get_cheapest_node(t_list **stack)
+{
+	t_list		*lst;
+
+	if (!(*stack))
+		return (NULL);
+	lst = *stack;
+	while (lst != NULL)
+	{
+		if (lst->cheapest_node == true)
+			return (lst);
+		lst = lst->next;
+	}
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 14:52:17 by gabriela          #+#    #+#             */
-/*   Updated: 2024/05/03 19:05:31 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:11:45 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int				ft_len_list(t_list **list);
 int				ft_last_lst(t_list **stack);
 t_list			*ft_node_max(t_list **list);
 t_list			*ft_node_min(t_list **list);
+t_list			*ft_get_cheapest_node(t_list **stack);
 //create stacks
 void			ft_create_stack_a(char **str, t_list **head);
 void			ft_create_node_last(t_list **list, int number);
@@ -55,6 +56,9 @@ int				ft_is_sorted(t_list **list);
 void			ft_order_three(t_list **stack_a);
 void			ft_big_sort(t_list **stack_a, int len_a);
 void			ft_init_node_a(t_list **stack_a, t_list **stack_b);
+void			ft_put_index(t_list **stack);
+void			ft_push_a_b(t_list **stack_a, t_list **stack_b);
+void			ft_check_top(t_list **stack, t_list *top, char *stack_name);
 //auxiliary functions for sorting
 void			ft_sa(t_list **stack_a, int p);
 void			ft_sb(t_list **stack_b, int p);
