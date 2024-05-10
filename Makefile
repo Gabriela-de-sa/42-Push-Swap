@@ -6,7 +6,7 @@
 #    By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 15:57:53 by gabriela          #+#    #+#              #
-#    Updated: 2024/05/06 14:09:38 by gabriela         ###   ########.fr        #
+#    Updated: 2024/05/09 20:38:47 by gabriela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,12 +40,13 @@ FILE = \
 	order_operations/rotate_reverse.c\
 	order_operations/push.c\
 	sort_list/is_sorted.c\
-	sort_list/sort_decision.c\
 	sort_list/order_three.c\
 	sort_list/big_sort.c\
 	sort_list/init_node_a.c\
-	sort_list/push_a_b.c\
-	sort_list/check_top.c\
+	sort_list/init_node_b.c\
+	sort_list/push_a_to_b.c\
+	sort_list/push_b_to_a.c\
+	sort_list/node_min_top.c\
 
 SRC_FILES = $(addprefix $(SRC),$(FILE))
 	

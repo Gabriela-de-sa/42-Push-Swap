@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:56:14 by gde-sa            #+#    #+#             */
-/*   Updated: 2024/04/04 14:13:19 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/05/09 21:14:24 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,6 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10000
 # endif
-
-/* libft */
-/*typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;*/
 
 void			ft_putchar(char c);
 void			*ft_memset(void *b, int c, size_t len);
@@ -70,16 +63,6 @@ void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 char			*ft_itoa(int n);
-/*t_list			*ft_lstnew(void *content);
-void			ft_lstadd_front(t_list **lst, t_list *new);
-int				ft_lstsize(t_list *lst);
-t_list			*ft_lstlast(t_list *lst);
-void			ft_lstadd_back(t_list **lst, t_list *new);
-void			ft_lstdelone(t_list *lst, void (*del)(void*));
-void			ft_lstclear(t_list **lst, void (*del)(void*));
-void			ft_lstiter(t_list *lst, void (*f)(void *));
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), \
-							void (*del)(void *));*/
 int				ft_printf(const char *format, ...);
 void			ft_convert_hexa(unsigned int n, char format, int *count);
 void			ft_after_percentage(va_list args, char format, int *count);
@@ -88,7 +71,6 @@ void			ft_putnbr_pointer(size_t *ptr, int *count);
 void			ft_putnbr_unsigned(unsigned int n, int *count);
 void			ft_putstr_printf(char *str, int *count);
 void			ft_putchar_printf(char c, int *count);
-
 char			*get_next_line(int fd);
 int				ft_source_n(char *s);
 size_t			ft_strlen_gnl(char *x);

@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:52:40 by gabriela          #+#    #+#             */
-/*   Updated: 2024/05/05 14:56:10 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/05/09 00:00:29 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ t_list	*ft_node_max(t_list **list)
 	int			max;
 
 	if (!list || !(*list))
-		return NULL;
+		return (NULL);
 	lst = *list;
 	max = lst->data;
 	while (lst != NULL)
 	{
-		if (lst->data > max)
+		if (lst->data >= max)
 		{
 			max = lst->data;
 			max_node = lst;
@@ -41,12 +41,12 @@ t_list	*ft_node_min(t_list **list)
 	int			min;
 
 	if (!list || !(*list))
-		return NULL;
+		return (NULL);
 	lst = *list;
 	min = lst->data;
 	while (lst != NULL)
 	{
-		if (lst->data < min)
+		if (lst->data <= min)
 		{
 			min = lst->data;
 			min_node = lst;
@@ -65,7 +65,7 @@ t_list	*ft_get_cheapest_node(t_list **stack)
 	lst = *stack;
 	while (lst != NULL)
 	{
-		if (lst->cheapest_node == true)
+		if (lst->cheapest_node)
 			return (lst);
 		lst = lst->next;
 	}

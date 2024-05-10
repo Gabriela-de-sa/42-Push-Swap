@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 11:31:09 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/17 16:56:12 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/05/07 20:42:00 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ft_ra(t_list **stack_a, int p)
 	if ((*stack_a)->next == NULL)
 		return ;
 	lst = *stack_a;
-	first = lst;
 	*stack_a = lst->next;
+	first = lst;
 	while (lst->next != NULL)
 		lst = lst->next;
 	lst->next = first;

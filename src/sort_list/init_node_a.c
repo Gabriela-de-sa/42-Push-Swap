@@ -6,13 +6,12 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:03:10 by gabriela          #+#    #+#             */
-/*   Updated: 2024/05/05 14:53:20 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/05/09 21:04:02 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-// funcao coloca o index. Isso decide se o numero vai ficar acima ou embaixo na linha da media
 void	ft_put_index(t_list **stack)
 {
 	int		i;
@@ -28,16 +27,14 @@ void	ft_put_index(t_list **stack)
 	{
 		lst->index = i;
 		if (i <= median)
-			(*stack)->above_median = true;
+			lst->above_median = true;
 		else
 			lst->above_median = false;
 		lst = lst->next;
-		i++;
+		++i;
 	}
 }
 
-// colocar os alvos dos numeros da lista A no numero mais proximo de cada numero
-// se o numero da stack A for o menor e tbm da stack b colocar ele como alvo o maior numero da B
 void	ft_set_target_a(t_list **stack_a, t_list **stack_b)
 {
 	t_list		*lst_a;
@@ -67,8 +64,6 @@ void	ft_set_target_a(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-// calcula o custa de envio para cada no da stak A para a B
-// quantas rotacoes sera necessario para o alvo e o no da A estar no topo
 void	ft_cost_analysis_a(t_list **stack_a, t_list **stack_b)
 {
 	int		len_a;
@@ -78,24 +73,19 @@ void	ft_cost_analysis_a(t_list **stack_a, t_list **stack_b)
 	len_a = ft_len_list(stack_a);
 	len_b = ft_len_list(stack_b);
 	lst = *stack_a;
-	lst->push_cost = 0;
 	while (lst != NULL)
 	{
 		lst->push_cost = lst->index;
-		// se o numero de A estiver abaixo d media calcula o len de a menos index
-		if (lst->above_median == false)
-			lst->push_cost = len_a - lst->index;
-		// se o numero que é alvo de A estiver acima da media, acrescenta ao valor o index do alvo na B
-		if (lst->target_node->above_median == true)
+		if (!(lst->above_median))
+			lst->push_cost = len_a - (lst->index);
+		if (lst->target_node->above_median)
 			lst->push_cost += lst->target_node->index;
-		// se for falso é somente acrescentar o a subtracao de len_b - index do alvo de B
 		else
-			lst->push_cost += len_b - lst->target_node->index;
+			lst->push_cost += len_b - (lst->target_node->index);
 		lst = lst->next;
 	}
 }
 
-// define como true o no mais barato que vai ir para a stack_b
 void	ft_set_cheapest(t_list **stack)
 {
 	long		cheapest_value;

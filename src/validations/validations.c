@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 15:08:06 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/29 13:57:08 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/05/10 12:26:42 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_is_int(char *nptr)
 		i++;
 	if (nptr[i] == '-')
 		sign = -1;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	if (nptr[i] == '-')
 		i++;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{

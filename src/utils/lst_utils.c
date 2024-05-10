@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 20:12:07 by gabriela          #+#    #+#             */
-/*   Updated: 2024/04/25 16:41:24 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/05/10 13:09:09 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ int	ft_len_list(t_list **list)
 	t_list	*lst;
 	int		len;
 
+	if (NULL == *list)
+		return (0);
 	len = 0;
 	lst = (*list);
 	while (lst != NULL)
