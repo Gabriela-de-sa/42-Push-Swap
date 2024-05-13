@@ -3,14 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   push_b_to_a.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 20:35:21 by gabriela          #+#    #+#             */
-/*   Updated: 2024/05/09 20:50:12 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:38:21 by gde-sa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	ft_check_top(t_list **stack, t_list *top, char *stack_name)
+{
+	while (*stack != top)
+	{
+		if (ft_strcmp(stack_name, "stack_a") == 0)
+		{
+			if (top->above_median)
+				ft_ra(stack, 0);
+			else
+				ft_rra(stack, 0);
+		}
+		else if (ft_strcmp(stack_name, "stack_b") == 0)
+		{
+			if (top->above_median)
+				ft_rb(stack, 0);
+			else
+				ft_rrb(stack, 0);
+		}
+	}
+}
 
 static void	ft_rotate_a_b(t_list **stack_a, t_list **stack_b, \
 			t_list *cheapest_node)

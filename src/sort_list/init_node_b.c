@@ -3,14 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   init_node_b.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 11:47:14 by gabriela          #+#    #+#             */
-/*   Updated: 2024/05/09 20:26:46 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:51:42 by gde-sa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	ft_put_index(t_list **stack)
+{
+	int		i;
+	int		median;
+	t_list	*lst;
+
+	i = 0;
+	if (!(*stack))
+		return ;
+	lst = *stack;
+	median = ft_len_list(stack) / 2;
+	while (lst != NULL)
+	{
+		lst->index = i;
+		if (i <= median)
+			lst->above_median = true;
+		else
+			lst->above_median = false;
+		lst = lst->next;
+		++i;
+	}
+}
 
 void	ft_set_target_b(t_list **stack_a, t_list **stack_b)
 {
@@ -61,6 +84,28 @@ void	ft_cost_analysis_b(t_list **stack_a, t_list **stack_b)
 			lst->push_cost += len_a - (lst->target_node->index);
 		lst = lst->next;
 	}
+}
+
+void	ft_set_cheapest(t_list **stack)
+{
+	long		cheapest_value;
+	t_list		*cheapest_node;
+	t_list		*lst;
+
+	if (!(*stack))
+		return ;
+	cheapest_value = 2147483648;
+	lst = *stack;
+	while (lst != NULL)
+	{
+		if (lst->push_cost < cheapest_value)
+		{
+			cheapest_value = lst->push_cost;
+			cheapest_node = lst;
+		}
+		lst = lst->next;
+	}
+	cheapest_node->cheapest_node = true;
 }
 
 void	ft_init_node_b(t_list **stack_a, t_list **stack_b)
