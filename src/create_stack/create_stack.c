@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 12:27:25 by gabriela          #+#    #+#             */
-/*   Updated: 2024/05/09 16:52:01 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/05/13 23:17:28 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ void	ft_create_node_last(t_list **list, int number)
 	if (node == NULL)
 		exit(ft_clear_stack_a(list));
 	node->data = number;
+	node->index = 0;
+	node->push_cost = 0;
+	node->above_median = 0;
+	node->target_node = NULL;
+	node->cheapest_node = false;
 	node->next = NULL;
 	if (*list == NULL)
 	{

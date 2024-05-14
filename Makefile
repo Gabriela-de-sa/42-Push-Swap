@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+         #
+#    By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 15:57:53 by gabriela          #+#    #+#              #
-#    Updated: 2024/05/13 17:50:58 by gde-sa           ###   ########.fr        #
+#    Updated: 2024/05/13 23:25:40 by gabriela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ FILE = \
 	sort_list/order_three.c\
 	sort_list/big_sort.c\
 	sort_list/init_node_b.c\
-	sort_list/push_b_to_a.c\
+	sort_list/move_b_to_a.c\
 	sort_list/node_min_top.c\
 
 SRC_FILES = $(addprefix $(SRC),$(FILE))
