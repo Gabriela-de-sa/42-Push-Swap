@@ -40,7 +40,7 @@ int	ft_is_int(char *nptr)
 		i++;
 	if (nptr[i] == '-')
 		sign = -1;
-	if (nptr[i] == '-')
+	if (nptr[i] == '-' || nptr[i] == '+')
 		i++;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
@@ -59,7 +59,7 @@ int	ft_is_numeric(char *str)
 	i = 0;
 	if (str[0] == '\0')
 		exit(ft_printf("Error\n"));
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (str[i])
 	{
