@@ -6,7 +6,7 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 14:52:17 by gabriela          #+#    #+#             */
-/*   Updated: 2024/05/10 13:29:27 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/06/10 21:54:51 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ int				ft_clear_stacks(t_list **stack_a, t_list **stack_b);
 void			ft_valid_args(int argc);
 int				ft_is_numeric(char *c);
 void			ft_validation(char **str, int argc);
+int				ft_check_duplicates(char *n, char **str, int index);
+char			*ft_check_signal(char *str);
+void			ft_error(void);
 //auxiliary functions 
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_min(t_list **list);

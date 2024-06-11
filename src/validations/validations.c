@@ -6,24 +6,16 @@
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 15:08:06 by gabriela          #+#    #+#             */
-/*   Updated: 2024/05/10 12:26:42 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/06/10 21:46:56 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ft_check_duplicates(char *n, char **str, int index)
+void	ft_error(void)
 {
-	int		i;
-
-	i = 1;
-	while (str[i])
-	{
-		if (ft_strcmp(str[i], n) == 0 && i != index)
-			exit(ft_printf("Error\n"));
-		i++;
-	}
-	return (0);
+	ft_putstr_fd("Error\n", 2);
+	exit(1);
 }
 
 int	ft_is_int(char *nptr)
@@ -48,7 +40,7 @@ int	ft_is_int(char *nptr)
 		i++;
 	}
 	if (sign * result < -2147483648 || sign * result > 2147483647)
-		exit(ft_printf("Error\n"));
+		ft_error();
 	return (0);
 }
 
@@ -58,13 +50,13 @@ int	ft_is_numeric(char *str)
 
 	i = 0;
 	if (str[0] == '\0')
-		exit(ft_printf("Error\n"));
+		ft_error();
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (str[i])
 	{
 		if (ft_isdigit(str[i]) == 0)
-			exit(ft_printf("Error\n"));
+			ft_error();
 		i++;
 	}
 	return (0);

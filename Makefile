@@ -6,7 +6,7 @@
 #    By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 15:57:53 by gabriela          #+#    #+#              #
-#    Updated: 2024/05/13 23:25:40 by gabriela         ###   ########.fr        #
+#    Updated: 2024/06/10 21:54:20 by gabriela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRC = src/
 FILE = \
 	push_swap.c\
 	validations/validations.c\
+	validations/validations_more.c\
 	create_stack/create_stack.c\
 	utils/clear_memory.c\
 	utils/lst_utils.c\

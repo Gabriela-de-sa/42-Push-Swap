@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   validations_more.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/09 11:22:31 by gabriela          #+#    #+#             */
-/*   Updated: 2024/06/10 19:19:14 by gabriela         ###   ########.fr       */
+/*   Created: 2024/06/10 21:46:40 by gabriela          #+#    #+#             */
+/*   Updated: 2024/06/10 21:56:35 by gabriela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/push_swap.h"
 
-void	ft_putstr_fd(char *s, int fd)
+char	*ft_check_signal(char *str)
 {
-	int	i;
+	if (str[0] == '+')
+		str = str + 1;
+	return (str);
+}
 
-	i = 0;
-	while (s[i])
+int	ft_check_duplicates(char *n, char **str, int index)
+{
+	int		i;
+
+	i = 1;
+	while (str[i])
 	{
-		write(fd, &s[i], 1);
+		if (i != index)
+		{
+			if (ft_strcmp(ft_check_signal(str[i]), n) == 0)
+				ft_error();
+		}
 		i++;
 	}
+	return (0);
 }
