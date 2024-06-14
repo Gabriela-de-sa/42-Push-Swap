@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+         #
+#    By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 15:57:53 by gabriela          #+#    #+#              #
-#    Updated: 2024/06/10 21:54:20 by gabriela         ###   ########.fr        #
+#    Updated: 2024/06/14 13:41:41 by gde-sa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,12 +30,12 @@ SRC = src/
 FILE = \
 	push_swap.c\
 	validations/validations.c\
-	validations/validations_more.c\
 	create_stack/create_stack.c\
 	utils/clear_memory.c\
 	utils/lst_utils.c\
 	utils/lst_utils2.c\
 	utils/ft_strcmp.c\
+	utils/error.c\
 	order_operations/swap.c\
 	order_operations/rotate.c\
 	order_operations/rotate_reverse.c\

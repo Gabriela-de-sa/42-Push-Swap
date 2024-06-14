@@ -3,14 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   create_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 12:27:25 by gabriela          #+#    #+#             */
-/*   Updated: 2024/05/13 23:17:28 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/06/14 14:02:45 by gde-sa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	ft_exist_number(int number, t_list **stack_a)
+{
+	t_list	*lst;
+
+	lst = *stack_a;
+	while (lst != NULL)
+	{
+		if (lst->data == number)
+		{
+			ft_clear_stack_a(stack_a);
+			ft_error();
+		}
+		lst = lst->next;
+	}
+}
 
 void	ft_create_node_last(t_list **list, int number)
 {
@@ -38,16 +54,11 @@ void	ft_create_node_last(t_list **list, int number)
 	lst->next = node;
 }
 
-void	ft_create_stack_a(char **str, t_list **stack_a)
+void	ft_create_stack_a(char *str, t_list **stack_a)
 {
-	int			i;
 	int			number;
 
-	i = 1;
-	while (str[i])
-	{
-		number = ft_atoi(str[i]);
-		ft_create_node_last(stack_a, number);
-		i++;
-	}
+	number = ft_atoi(str);
+	ft_exist_number(number, stack_a);
+	ft_create_node_last(stack_a, number);
 }

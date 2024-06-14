@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 14:52:17 by gabriela          #+#    #+#             */
-/*   Updated: 2024/06/10 21:54:51 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/06/14 13:45:06 by gde-sa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int				ft_clear_stacks(t_list **stack_a, t_list **stack_b);
 //valid args
 void			ft_valid_args(int argc);
 int				ft_is_numeric(char *c);
-void			ft_validation(char **str, int argc);
+void			ft_validation(char **str, int argc, t_list **stack_a);
 int				ft_check_duplicates(char *n, char **str, int index);
 char			*ft_check_signal(char *str);
 void			ft_error(void);
@@ -50,7 +50,7 @@ t_list			*ft_node_max(t_list **list);
 t_list			*ft_node_min(t_list **list);
 t_list			*ft_get_cheapest_node(t_list **stack);
 //create stacks
-void			ft_create_stack_a(char **str, t_list **head);
+void			ft_create_stack_a(char *str, t_list **stack_a);
 void			ft_create_node_last(t_list **list, int number);
 void			ft_create_top_node(t_list **list, t_list **stack, int value);
 //sorting functions

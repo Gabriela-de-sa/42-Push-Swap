@@ -6,7 +6,7 @@
 /*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 17:01:55 by gabriela          #+#    #+#             */
-/*   Updated: 2024/05/13 12:08:19 by gde-sa           ###   ########.fr       */
+/*   Updated: 2024/06/14 13:43:52 by gde-sa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	ft_validation(argv, argc);
-	ft_create_stack_a(argv, &stack_a);
+	ft_validation(argv, argc, &stack_a);
 	len_a = ft_len_list(&stack_a);
 	if (len_a == 1)
 		exit(ft_clear_stacks(&stack_a, &stack_b));

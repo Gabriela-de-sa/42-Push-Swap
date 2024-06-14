@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   validations.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriela <gabriela@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gde-sa <gde-sa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 15:08:06 by gabriela          #+#    #+#             */
-/*   Updated: 2024/06/10 21:46:56 by gabriela         ###   ########.fr       */
+/*   Updated: 2024/06/14 15:11:32 by gde-sa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-void	ft_error(void)
-{
-	ft_putstr_fd("Error\n", 2);
-	exit(1);
-}
 
 int	ft_is_int(char *nptr)
 {
@@ -62,7 +56,7 @@ int	ft_is_numeric(char *str)
 	return (0);
 }
 
-void	ft_validation(char **str, int argc)
+void	ft_validation(char **str, int argc, t_list **stack_a)
 {
 	int	i;
 
@@ -73,7 +67,9 @@ void	ft_validation(char **str, int argc)
 	{
 		ft_is_numeric(str[i]);
 		ft_is_int(str[i]);
-		ft_check_duplicates(str[i], str, i);
 		i++;
 	}
+	i = 1;
+	while (str[i])
+		ft_create_stack_a(str[i++], stack_a);
 }
